@@ -1,65 +1,89 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import FadeIn from "./components/FadeIn";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Meghaaarika International Private Limited | New Delhi",
+  description:
+    "Official corporate website of Meghaaarika International Private Limited. Institutional consulting and B2B component trading based in New Delhi, India.",
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Hero */}
+      <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden bg-[#FAFAFA]">
+        {/* Subtle dot-grid overlay */}
+        <div className="absolute inset-0 hero-grid pointer-events-none" aria-hidden="true" />
+
+        <div className="relative z-10 max-w-3xl mx-auto w-full text-center">
+          <FadeIn>
+            <h1
+              className="text-3xl md:text-5xl lg:text-6xl font-semibold text-[#2D2D2D] leading-tight"
+              style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Meghaaarika International Private Limited
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <p className="mt-6 text-lg text-[#6B6B6B] italic leading-relaxed max-w-xl mx-auto">
+              A diversified corporate enterprise focused on institutional consulting and strategic trading.
+            </p>
+            <hr className="gold-divider mt-8" />
+          </FadeIn>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="bg-white px-6 py-20">
+        <FadeIn>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-[#2D2D2D] text-[16px] leading-[1.85] font-light">
+              Headquartered in New Delhi, Meghaaarika International Private Limited operates at the
+              intersection of financial market advisory and essential component trading. Built on a
+              foundation of professional excellence and regulatory compliance, the firm serves as a
+              stable corporate vehicle for diversified business activities. We prioritize long-term
+              institutional value, maintaining a disciplined approach to our core sectors while
+              adhering to the highest standards of professional conduct.
+            </p>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Two Verticals Preview */}
+      <section className="bg-[#FAFAFA] px-6 py-20">
+        <FadeIn>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Left card */}
+            <div className="bg-white border border-[#E5E5E5] p-10">
+              <h3
+                className="text-xl font-semibold text-[#2D2D2D] mb-4"
+                style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
+              >
+                Financial Market Consulting &amp; Advisory
+              </h3>
+              <p className="text-[#6B6B6B] text-[15px] leading-relaxed">
+                Broad-based consulting services within financial markets, encompassing debt and
+                equity consultation and strategic advisory for navigating the domestic financial
+                environment.
+              </p>
+            </div>
+
+            {/* Right card */}
+            <div className="bg-white border border-[#E5E5E5] p-10">
+              <h3
+                className="text-xl font-semibold text-[#2D2D2D] mb-4"
+                style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
+              >
+                Renewable Energy &amp; EV Component Trading
+              </h3>
+              <p className="text-[#6B6B6B] text-[15px] leading-relaxed">
+                B2B supplier of essential components for electric vehicle manufacturing, supporting
+                the industrial ecosystem responsible for the future of sustainable mobility.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+    </>
   );
 }
